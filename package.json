@@ -1,0 +1,19 @@
+{
+  "type": "module",
+  "dependencies": {
+    "@google/genai": "^1.27.0",
+    "@google/generative-ai": "^0.24.1",
+    "@langchain/community": "^0.3.57",
+    "@langchain/core": "^0.3.78",
+    "@langchain/google-genai": "^0.2.18",
+    "@langchain/openai": "^0.6.16",
+    "@langchain/pinecone": "^0.2.0",
+    "@pinecone-database/pinecone": "^5.1.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^5.1.0",
+    "nodemailer": "^7.0.10",
+    "pdf-parse": "^1.1.1",
+    "readline-sync": "^1.4.10"
+  }
+}
