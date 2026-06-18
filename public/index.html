@@ -10,18 +10,30 @@
   <script src="https://unpkg.com/lucide@latest"></script>
   <style>
     /* ═══════════ THEMES ═══════════ */
-    :root,[data-theme="void"]{
-      --bg0:#000810;--bg1:#030d1e;--bg2:#071426;
-      --surf:rgba(0,229,255,.03);--surf2:rgba(0,229,255,.06);
-      --bdr:rgba(0,229,255,.1);--bdr2:rgba(0,229,255,.28);
-      --a1:#00e5ff;--a2:#7c3aed;--a3:#e040fb;
-      --g1:rgba(0,229,255,.18);--g2:rgba(124,58,237,.18);
-      --gr1:linear-gradient(135deg,#00e5ff,#7c3aed);
-      --gr2:linear-gradient(135deg,#7c3aed,#e040fb);
-      --txt:#e2e8f0;--txt2:#64748b;--txt3:#1e3a5f;
-      --tl:#00e5ff;--noise:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
-    }
-    [data-theme="cyber"]{
+   
+:root,[data-theme="void"]{
+  --bg0:#000810;--bg1:#030d1e;--bg2:#071426;
+  --surf:rgba(0,229,255,.025);--surf2:rgba(0,229,255,.06);
+  --bdr:rgba(0,229,255,.09);--bdr2:rgba(0,229,255,.26);
+  --a1:#00e5ff;--a2:#7c3aed;--a3:#e040fb;
+  --g1:rgba(0,229,255,.16);--g2:rgba(124,58,237,.16);
+  --gr1:linear-gradient(135deg,#00e5ff,#7c3aed);
+  --gr2:linear-gradient(135deg,#7c3aed,#e040fb);
+  --txt:#e2e8f0;--txt2:#64748b;--txt3:#1e3a5f;
+  --dna1:#00e5ff;--dna2:#7c3aed;
+  --tl:#00e5ff;--noise:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+
+  --h1-c:#e2e8f0;--h2-c:#00e5ff;--h3-c:#a78bfa;--h4-c:#94a3b8;
+  --link-c:#38bdf8;--link-hover:#00e5ff;
+  --code-bg:rgba(0,229,255,.08);--code-c:#7dd3fc;--code-bdr:rgba(0,229,255,.2);
+  --table-head-bg:rgba(0,229,255,.1);--table-row-bg:rgba(0,229,255,.03);
+  --table-bdr:rgba(0,229,255,.15);
+  --strong-c:#f1f5f9;--em-c:#a5b4fc;
+  --blockquote-bdr:#7c3aed;--blockquote-bg:rgba(124,58,237,.07);
+  --success:#34d399;--warn:#fbbf24;--err:#f87171;
+  --nav-scroll-bg:rgba(0,8,16,.88);
+}
+ [data-theme="cyber"]{
       --bg0:#001200;--bg1:#001a00;--bg2:#002200;
       --surf:rgba(0,255,65,.03);--surf2:rgba(0,255,65,.06);
       --bdr:rgba(0,255,65,.1);--bdr2:rgba(0,255,65,.28);
@@ -31,37 +43,58 @@
       --gr2:linear-gradient(135deg,#00cc33,#66ff88);
       --txt:#ccffe4;--txt2:#2d6640;--txt3:#0a2e12;--tl:#00ff41;
     }
-    [data-theme="aurora"]{
-      --bg0:#08001a;--bg1:#0f002a;--bg2:#160035;
-      --surf:rgba(168,85,247,.04);--surf2:rgba(168,85,247,.08);
-      --bdr:rgba(168,85,247,.12);--bdr2:rgba(168,85,247,.32);
-      --a1:#a855f7;--a2:#06b6d4;--a3:#f472b6;
-      --g1:rgba(168,85,247,.2);--g2:rgba(6,182,212,.2);
-      --gr1:linear-gradient(135deg,#a855f7,#06b6d4);
-      --gr2:linear-gradient(135deg,#06b6d4,#f472b6);
-      --txt:#e9d5ff;--txt2:#6b21a8;--txt3:#2e1065;--tl:#a855f7;
-    }
-    [data-theme="solar"]{
-      --bg0:#0f0500;--bg1:#180a00;--bg2:#211000;
-      --surf:rgba(255,153,0,.03);--surf2:rgba(255,153,0,.06);
-      --bdr:rgba(255,153,0,.1);--bdr2:rgba(255,153,0,.3);
-      --a1:#ff9900;--a2:#ff4400;--a3:#ffcc00;
-      --g1:rgba(255,153,0,.2);--g2:rgba(255,68,0,.2);
-      --gr1:linear-gradient(135deg,#ff9900,#ff4400);
-      --gr2:linear-gradient(135deg,#ff4400,#ffcc00);
-      --txt:#fff0d4;--txt2:#7a3800;--txt3:#2d1400;--tl:#ff9900;
-    }
-    [data-theme="frost"]{
-      --bg0:#f0f4ff;--bg1:#e8eeff;--bg2:#f5f7ff;
-      --surf:rgba(59,130,246,.05);--surf2:rgba(59,130,246,.1);
-      --bdr:rgba(59,130,246,.15);--bdr2:rgba(59,130,246,.4);
-      --a1:#3b82f6;--a2:#7c3aed;--a3:#06b6d4;
-      --g1:rgba(59,130,246,.15);--g2:rgba(124,58,237,.15);
-      --gr1:linear-gradient(135deg,#3b82f6,#7c3aed);
-      --gr2:linear-gradient(135deg,#7c3aed,#06b6d4);
-      --txt:#0f172a;--txt2:#475569;--txt3:#cbd5e1;--tl:#3b82f6;
-    }
-    [data-theme="neon"]{
+[data-theme="aurora"]{
+  --bg0:#001200;--bg1:#001a00;--bg2:#002200;
+      --surf:rgba(0,255,65,.03);--surf2:rgba(0,255,65,.06);
+      --bdr:rgba(0,255,65,.1);--bdr2:rgba(0,255,65,.28);
+      --a1:#00ff41;--a2:#00cc33;--a3:#66ff88;
+      --g1:rgba(0,255,65,.18);--g2:rgba(0,204,51,.18);
+      --gr1:linear-gradient(135deg,#00ff41,#00cc33);
+      --gr2:linear-gradient(135deg,#00cc33,#66ff88);
+      --txt:#ccffe4;--txt2:#2d6640;--txt3:#0a2e12;--tl:#00ff41;
+}
+
+[data-theme="solar"]{
+  --bg0:#0f0500;--bg1:#180a00;--bg2:#211000;
+  --surf:rgba(255,153,0,.025);--surf2:rgba(255,153,0,.06);
+  --bdr:rgba(255,153,0,.09);--bdr2:rgba(255,153,0,.28);
+  --a1:#ff9900;--a2:#ff4400;--a3:#ffcc00;
+  --g1:rgba(255,153,0,.18);--g2:rgba(255,68,0,.18);
+  --gr1:linear-gradient(135deg,#ff9900,#ff4400);
+  --gr2:linear-gradient(135deg,#ff4400,#ffcc00);
+  --txt:#fff0d4;--txt2:#7a3800;
+  --dna1:#ff9900;--dna2:#ff4400;
+  --h1-c:#fff0d4;--h2-c:#ff9900;--h3-c:#ffcc00;--h4-c:#fcd9a0;
+  --link-c:#fbbf24;--link-hover:#ff9900;
+  --code-bg:rgba(255,153,0,.1);--code-c:#fcd34d;--code-bdr:rgba(255,153,0,.25);
+  --table-head-bg:rgba(255,153,0,.12);--table-row-bg:rgba(255,153,0,.04);
+  --table-bdr:rgba(255,153,0,.18);
+  --strong-c:#ffffff;--em-c:#fde68a;
+  --blockquote-bdr:#ff4400;--blockquote-bg:rgba(255,68,0,.08);
+  --success:#86efac;--warn:#fbbf24;--err:#fca5a5;
+  --nav-scroll-bg:rgba(15,5,0,.88);
+}
+[data-theme="frost"]{
+  --bg0:#f0f4ff;--bg1:#e8eeff;--bg2:#f5f7ff;
+  --surf:rgba(59,130,246,.05);--surf2:rgba(59,130,246,.1);
+  --bdr:rgba(59,130,246,.14);--bdr2:rgba(59,130,246,.38);
+  --a1:#3b82f6;--a2:#7c3aed;--a3:#06b6d4;
+  --g1:rgba(59,130,246,.14);--g2:rgba(124,58,237,.14);
+  --gr1:linear-gradient(135deg,#3b82f6,#7c3aed);
+  --gr2:linear-gradient(135deg,#7c3aed,#06b6d4);
+  --txt:#0f172a;--txt2:#475569;
+  --dna1:#3b82f6;--dna2:#7c3aed;
+  --h1-c:#0f172a;--h2-c:#1d4ed8;--h3-c:#7c3aed;--h4-c:#475569;
+  --link-c:#2563eb;--link-hover:#1d4ed8;
+  --code-bg:rgba(59,130,246,.08);--code-c:#1d4ed8;--code-bdr:rgba(59,130,246,.22);
+  --table-head-bg:rgba(59,130,246,.1);--table-row-bg:rgba(59,130,246,.03);
+  --table-bdr:rgba(59,130,246,.18);
+  --strong-c:#0f172a;--em-c:#7c3aed;
+  --blockquote-bdr:#7c3aed;--blockquote-bg:rgba(124,58,237,.06);
+  --success:#166534;--warn:#92400e;--err:#991b1b;
+  --nav-scroll-bg:rgba(240,244,255,.92);
+}
+[data-theme="neon"]{
       --bg0:#0a0010;--bg1:#100020;--bg2:#15002a;
       --surf:rgba(255,0,255,.03);--surf2:rgba(255,0,255,.07);
       --bdr:rgba(255,0,255,.12);--bdr2:rgba(255,0,255,.35);
@@ -71,16 +104,71 @@
       --gr2:linear-gradient(135deg,#ff006e,#00ffcc);
       --txt:#ffe0ff;--txt2:#660066;--txt3:#220022;--tl:#ff00ff;
     }
-    [data-theme="obsidian"]{
-      --bg0:#0a0a0a;--bg1:#111111;--bg2:#181818;
-      --surf:rgba(255,255,255,.02);--surf2:rgba(255,255,255,.05);
-      --bdr:rgba(255,255,255,.08);--bdr2:rgba(255,255,255,.25);
-      --a1:#ffffff;--a2:#aaaaaa;--a3:#555555;
-      --g1:rgba(255,255,255,.1);--g2:rgba(170,170,170,.1);
-      --gr1:linear-gradient(135deg,#ffffff,#aaaaaa);
-      --gr2:linear-gradient(135deg,#aaaaaa,#555555);
-      --txt:#f0f0f0;--txt2:#666666;--txt3:#222222;--tl:#ffffff;
-    }
+[data-theme="obsidian"]{
+  --bg0:#000000;--bg1:#111111;--bg2:#181818;
+  --surf:rgba(255,255,255,.02);--surf2:rgba(255,255,255,.05);
+  --bdr:rgba(255,255,255,.07);--bdr2:rgba(255,255,255,.22);
+  --a1:#f3f0f0;--a2:#f6f0f0;--a3:#070707;
+  --g1:rgba(255,255,255,.09);--g2:rgba(170,170,170,.09);
+  --gr1:linear-gradient(135deg,#e0e0e0,#090404);
+  --gr2:linear-gradient(135deg,#888888,#555555);
+  --txt:#f0f0f0;--txt2:#666666;
+  --dna1:#e0e0e0;--dna2:#888888;
+  --h1-c:#f0f0f0;--h2-c:#e0e0e0;--h3-c:#aaaaaa;--h4-c:#888888;
+  --link-c:#b0b0b0;--link-hover:#e0e0e0;
+  --code-bg:rgba(255,255,255,.05);--code-c:#cccccc;--code-bdr:rgba(255,255,255,.12);
+  --table-head-bg:rgba(255,255,255,.08);--table-row-bg:rgba(255,255,255,.02);
+  --table-bdr:rgba(255,255,255,.1);
+  --strong-c:#ffffff;--em-c:#aaaaaa;
+  --blockquote-bdr:#888888;--blockquote-bg:rgba(255,255,255,.03);
+  --success:#6ee7b7;--warn:#fcd34d;--err:#fca5a5;
+  --nav-scroll-bg:rgba(8,8,8,.92);
+}
+
+
+/* ── NEW PREMIUM THEME 1: Aurora Glass ── */
+[data-theme="aurora-glass"]{
+  --bg0:#0a0e1a;--bg1:#0f1628;--bg2:#141c32;
+  --surf:rgba(120,200,255,.03);--surf2:rgba(120,200,255,.07);
+  --bdr:rgba(120,200,255,.1);--bdr2:rgba(120,200,255,.28);
+  --a1:#7ff8e2;--a2:#5b8dee;--a3:#ff8fa3;
+  --g1:rgba(127,248,226,.14);--g2:rgba(91,141,238,.14);
+  --gr1:linear-gradient(135deg,#7ff8e2,#5b8dee);
+  --gr2:linear-gradient(135deg,#5b8dee,#ff8fa3);
+  --txt:#d6f0ff;--txt2:#4a7a9b;
+  --dna1:#7ff8e2;--dna2:#5b8dee;
+  --h1-c:#d6f0ff;--h2-c:#7ff8e2;--h3-c:#5b8dee;--h4-c:#8ab4c8;
+  --link-c:#7ff8e2;--link-hover:#a5f3fc;
+  --code-bg:rgba(127,248,226,.08);--code-c:#99f6e4;--code-bdr:rgba(127,248,226,.2);
+  --table-head-bg:rgba(127,248,226,.1);--table-row-bg:rgba(127,248,226,.03);
+  --table-bdr:rgba(127,248,226,.15);
+  --strong-c:#f0f9ff;--em-c:#7dd3fc;
+  --blockquote-bdr:#5b8dee;--blockquote-bg:rgba(91,141,238,.08);
+  --success:#34d399;--warn:#fbbf24;--err:#f87171;
+  --nav-scroll-bg:rgba(10,14,26,.88);
+}
+
+/* ── NEW PREMIUM THEME 2: Cosmic Ivory ── */
+[data-theme="cosmic-ivory"]{
+  --bg0:#faf8f3;--bg1:#f5f0e8;--bg2:#ece6d8;
+  --surf:rgba(120,90,40,.04);--surf2:rgba(120,90,40,.08);
+  --bdr:rgba(120,90,40,.12);--bdr2:rgba(120,90,40,.32);
+  --a1:#9b6b2f;--a2:#5c4a2a;--a3:#c4944a;
+  --g1:rgba(155,107,47,.12);--g2:rgba(92,74,42,.12);
+  --gr1:linear-gradient(135deg,#c4944a,#9b6b2f);
+  --gr2:linear-gradient(135deg,#9b6b2f,#5c4a2a);
+  --txt:#2c1f0e;--txt2:#7a6040;
+  --dna1:#c4944a;--dna2:#9b6b2f;
+  --h1-c:#1a1209;--h2-c:#7a4a1a;--h3-c:#9b6b2f;--h4-c:#6b5030;
+  --link-c:#9b6b2f;--link-hover:#7a4a1a;
+  --code-bg:rgba(155,107,47,.07);--code-c:#7a4a1a;--code-bdr:rgba(155,107,47,.2);
+  --table-head-bg:rgba(155,107,47,.1);--table-row-bg:rgba(155,107,47,.03);
+  --table-bdr:rgba(155,107,47,.18);
+  --strong-c:#1a1209;--em-c:#9b6b2f;
+  --blockquote-bdr:#c4944a;--blockquote-bg:rgba(196,148,74,.07);
+  --success:#166534;--warn:#78350f;--err:#991b1b;
+  --nav-scroll-bg:rgba(250,248,243,.92);
+}
 
     /* ═══════════ RESET ═══════════ */
     *{margin:0;padding:0;box-sizing:border-box}
@@ -758,75 +846,117 @@
     .footer-links{display:flex;gap:10px}
 
     /* ═══════════ CHAT WIDGET ═══════════ */
-    .chat-widget{position:fixed;bottom:36px;right:28px;z-index:700 ;}
-    .chat-toggle{
-      width:62px;height:62px;border-radius:50%;
-      background:var(--gr1);display:flex;align-items:center;justify-content:center;
-      
-      cursor:pointer;box-shadow:0 6px 32px var(--g1),0 0 0 0 var(--a1);
-      transition:all .3s;
-      animation:chat-pulse 3s ease-in-out infinite;
-    }
-    @keyframes chat-pulse{0%,100%{box-shadow:0 6px 32px var(--g1),0 0 0 0 rgba(0,229,255,.4)}50%{box-shadow:0 6px 32px var(--g1),0 0 0 14px rgba(0,229,255,0)}}
-    .chat-toggle:hover{transform:scale(1.12);box-shadow:0 10px 50px var(--g1)}
-    .chat-toggle svg{width:26px;height:26px;stroke:#000}
-    .chat-box{
-      position:absolute;bottom:78px;right:0;width:380px;
-      background:var(--bg1);border:1px solid var(--bdr2);border-radius:20px;
-      box-shadow:0 24px 80px var(--g1),0 0 0 1px var(--bdr);
-      display:none;flex-direction:column;overflow:hidden;
-      max-height:500px;
-    }
-    .chat-box.open{display:flex; 
-   
-  }
-    .chat-box-head{
-      padding:16px 18px;display:flex;align-items:center;justify-content:space-between;
-      border-bottom:1px solid var(--bdr);background:var(--surf2);
-    }
-    .chat-box-head h4{font-size:14px;font-weight:700;display:flex;align-items:center;gap:10px}
-    .chat-bot-dot{width:8px;height:8px;border-radius:50%;background:var(--a1);box-shadow:0 0 10px var(--a1);animation:pulse-dot 2s infinite}
-    .chat-msgs{
-      flex:1;padding:18px;overflow-y:auto;display:flex;flex-direction:column;gap:12px;
-    }
-    .chat-msgs::-webkit-scrollbar{width:4px}
-    .chat-msgs::-webkit-scrollbar-track{background:transparent}
-    .chat-msgs::-webkit-scrollbar-thumb{background:var(--bdr2);border-radius:4px}
-    .msg{padding:11px 15px;border-radius:15px;font-size:13px;line-height:1.65;max-width:86%;word-break:break-word}
-    .msg.bot{
-      background:var(--surf2);border:1px solid var(--bdr);
-      align-self:flex-start;border-bottom-left-radius:4px;
-    }
-    /* Parse HTML in bot messages */
-    .msg.bot .nova-response h3{font-size:14px;font-weight:700;margin-bottom:8px;color:var(--a1)}
-    .msg.bot .nova-response h4{font-size:13px;font-weight:600;margin:8px 0 4px;color:var(--txt)}
-    .msg.bot .nova-response p{font-size:13px;color:#65eded;line-height:1.6;margin-bottom:6px}
-    .msg.bot .nova-response ul{padding-left:16px;margin-bottom:6px}
-    .msg.bot .nova-response li{font-size:12px;color:var(--txt2);line-height:1.6;margin-bottom:2px}
-    .msg.bot .nova-response strong{color:var(--txt);font-weight:600}
-    .msg.bot .nova-response em{color:var(--txt2);font-style:italic}
-    .msg.user{background:var(--gr1);color:#000;align-self:flex-end;border-bottom-right-radius:4px;font-weight:600}
-    .chat-input-row{
-      padding:14px 16px;border-top:1px solid var(--bdr);display:flex;gap:10px;
-    }
-    .chat-input{
-      flex:1;padding:11px 16px;background:var(--surf);border:1px solid var(--bdr);
-      border-radius:100px;color:var(--txt);font-size:13px;outline:none;
-      transition:border-color .2s;
-    }
-    .chat-input:focus{border-color:var(--bdr2)}
-    .chat-send{
-      width:38px;height:38px;border-radius:50%;background:var(--gr1);
-      display:flex;align-items:center;justify-content:center;cursor:pointer;
-      transition:transform .2s;flex-shrink:0;
-    }
-    .chat-send:hover{transform:scale(1.12)}
-    .chat-send svg{width:15px;height:15px;stroke:#000}
-    .typing-ind{display:flex;gap:5px;padding:12px 16px;background:var(--surf2);border:1px solid var(--bdr);border-radius:15px;border-bottom-left-radius:4px;align-self:flex-start}
-    .typing-dot{width:7px;height:7px;background:var(--txt2);border-radius:50%;animation:tdot 1.4s infinite ease-in-out}
-    .typing-dot:nth-child(1){animation-delay:-.32s}
-    .typing-dot:nth-child(2){animation-delay:-.16s}
-    @keyframes tdot{0%,80%,100%{transform:scale(.7);opacity:.4}40%{transform:scale(1);opacity:1}}
+   .cw{position:fixed;bottom:34px;right:26px;z-index:700}
+.cw-tog{
+  width:62px;height:62px;border-radius:50%;
+  background:var(--gr1);display:flex;align-items:center;justify-content:center;
+  cursor:pointer;transition:all .32s cubic-bezier(.16,1,.3,1);
+  animation:cwpulse 3s ease-in-out infinite;
+}
+@keyframes cwpulse{0%,100%{box-shadow:0 5px 28px var(--g1),0 0 0 0 rgba(0,229,255,.35)}50%{box-shadow:0 5px 28px var(--g1),0 0 0 13px rgba(0,229,255,0)}}
+.cw-tog:hover{transform:scale(1.1);box-shadow:0 10px 44px var(--g1)}
+.cw-tog svg{width:24px;height:24px;stroke:#000}
+.cw-box{
+  position:absolute;bottom:76px;right:0;width:375px;
+  background:var(--bg1);border:1px solid var(--bdr2);border-radius:20px;
+  box-shadow:0 22px 75px var(--g1);
+  display:none;flex-direction:column;overflow:hidden;max-height:500px;
+  backdrop-filter:blur(18px);
+  /* Smooth open/close animation */
+  transform-origin:bottom right;
+  transform:scale(0.92) translateY(12px);
+  opacity:0;
+  transition:transform .28s cubic-bezier(.16,1,.3,1), opacity .22s ease;
+}
+.cw-box.open{
+  display:flex;
+  transform:scale(1) translateY(0);
+  opacity:1;
+  animation:cwopen .28s cubic-bezier(.16,1,.3,1) forwards;
+}
+@keyframes cwopen{from{transform:scale(0.92) translateY(12px);opacity:0}to{transform:scale(1) translateY(0);opacity:1}}
+.cw-head{padding:14px 16px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--bdr);background:var(--surf2)}
+.cw-head h4{font-size:13px;font-weight:700;display:flex;align-items:center;gap:9px;font-family:'Bricolage Grotesque',sans-serif}
+.cbdot{width:7px;height:7px;border-radius:50%;background:var(--a1);box-shadow:0 0 9px var(--a1);animation:pdot 2s infinite}
+/* Close button - always above chat content */
+.cw-close-btn{
+  width:28px;height:28px;border-radius:8px;
+  display:flex;align-items:center;justify-content:center;
+  border:1px solid var(--bdr);background:var(--surf);color:var(--txt2);
+  cursor:pointer;transition:all .2s;
+  position:relative;z-index:10;
+  flex-shrink:0;
+}
+.cw-close-btn:hover{border-color:var(--bdr2);color:var(--err);background:var(--surf2)}
+.cw-msgs{flex:1;padding:16px;overflow-y:auto;display:flex;flex-direction:column;gap:10px}
+.cw-msgs::-webkit-scrollbar{width:3px}
+.cw-msgs::-webkit-scrollbar-thumb{background:var(--bdr2);border-radius:3px}
+
+/* ════════════════════════════════════════
+   AI CHAT RICH CONTENT RENDERER
+   All elements adapt to active theme via CSS variables
+════════════════════════════════════════ */
+.msg{padding:10px 14px;border-radius:14px;font-size:12px;line-height:1.65;max-width:86%;word-break:break-word}
+.msg.bot{background:var(--surf2);border:1px solid var(--bdr);align-self:flex-start;border-bottom-left-radius:3px}
+.msg.user{background:var(--gr1);color:#000;align-self:flex-end;border-bottom-right-radius:3px;font-weight:600}
+
+/* Rich HTML content inside bot messages */
+.msg.bot h1{font-family:'Bricolage Grotesque',sans-serif;font-size:15px;font-weight:800;color:var(--h1-c);margin:10px 0 6px;letter-spacing:-.02em;line-height:1.2;border-bottom:1px solid var(--bdr);padding-bottom:6px}
+.msg.bot h2{font-family:'Bricolage Grotesque',sans-serif;font-size:14px;font-weight:700;color:var(--h2-c);margin:9px 0 5px;letter-spacing:-.02em;line-height:1.25}
+.msg.bot h3{font-family:'Bricolage Grotesque',sans-serif;font-size:13px;font-weight:700;color:var(--h3-c);margin:8px 0 4px;letter-spacing:-.01em}
+.msg.bot h4{font-size:12px;font-weight:700;color:var(--h4-c);margin:7px 0 4px;letter-spacing:.01em;text-transform:uppercase;font-family:'JetBrains Mono',monospace;font-size:10px}
+.msg.bot h5,.msg.bot h6{font-size:11px;font-weight:700;color:var(--txt2);margin:6px 0 3px}
+.msg.bot p{margin:5px 0;color:var(--txt);line-height:1.72;font-size:12px}
+.msg.bot p:first-child{margin-top:0}
+.msg.bot p:last-child{margin-bottom:0}
+.msg.bot strong{color:var(--strong-c);font-weight:700}
+.msg.bot em{color:var(--em-c);font-style:italic}
+.msg.bot code{
+  background:var(--code-bg);color:var(--code-c);border:1px solid var(--code-bdr);
+  border-radius:5px;padding:1px 6px;font-family:'JetBrains Mono',monospace;font-size:11px;
+  letter-spacing:0;
+}
+.msg.bot pre{
+  background:var(--code-bg);border:1px solid var(--code-bdr);
+  border-radius:10px;padding:12px 14px;margin:8px 0;overflow-x:auto;
+  position:relative;
+}
+.msg.bot pre code{
+  background:none;border:none;padding:0;color:var(--code-c);
+  font-size:11px;line-height:1.7;display:block;
+}
+.msg.bot blockquote{
+  background:var(--blockquote-bg);border-left:3px solid var(--blockquote-bdr);
+  padding:8px 12px;margin:8px 0;border-radius:0 8px 8px 0;font-style:italic;
+  color:var(--txt2);font-size:12px;
+}
+.msg.bot ul,.msg.bot ol{padding-left:18px;margin:7px 0;display:flex;flex-direction:column;gap:5px}
+.msg.bot li{font-size:12px;color:var(--txt);line-height:1.65}
+.msg.bot li::marker{color:var(--a1)}
+.msg.bot a{color:var(--link-c);text-decoration:underline;text-decoration-color:rgba(56,189,248,.3);text-underline-offset:2px;transition:color .2s,text-decoration-color .2s}
+.msg.bot a:hover{color:var(--link-hover);text-decoration-color:var(--link-hover)}
+.msg.bot hr{border:none;border-top:1px solid var(--bdr);margin:10px 0}
+.msg.bot table{width:100%;border-collapse:collapse;font-size:11px;margin:8px 0;border-radius:8px;overflow:hidden}
+.msg.bot thead{background:var(--table-head-bg)}
+.msg.bot th{padding:7px 10px;font-weight:700;color:var(--a1);text-align:left;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.04em;border-bottom:1px solid var(--table-bdr)}
+.msg.bot tbody tr{background:var(--table-row-bg);border-bottom:1px solid var(--table-bdr);transition:background .15s}
+.msg.bot tbody tr:hover{background:var(--surf2)}
+.msg.bot td{padding:6px 10px;color:var(--txt)}
+/* Key metric highlight */
+.msg.bot .metric{display:inline-flex;align-items:center;gap:4px;background:var(--g1);border:1px solid var(--bdr2);border-radius:6px;padding:2px 8px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--a1);font-weight:600}
+
+.cw-inp-row{padding:12px 14px;border-top:1px solid var(--bdr);display:flex;gap:9px}
+.cw-inp{flex:1;padding:10px 15px;background:var(--surf);border:1px solid var(--bdr);border-radius:100px;color:var(--txt);font-size:12px;outline:none;transition:border-color .2s}
+.cw-inp:focus{border-color:var(--bdr2)}
+.cw-send{width:36px;height:36px;border-radius:50%;background:var(--gr1);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:transform .22s;flex-shrink:0}
+.cw-send:hover{transform:scale(1.1)}
+.cw-send svg{width:14px;height:14px;stroke:#000}
+.typing{display:flex;gap:4px;padding:10px 14px;background:var(--surf2);border:1px solid var(--bdr);border-radius:14px;border-bottom-left-radius:3px;align-self:flex-start}
+.tdot{width:6px;height:6px;background:var(--txt2);border-radius:50%;animation:tdot 1.4s infinite ease-in-out}
+.tdot:nth-child(1){animation-delay:-.32s}
+.tdot:nth-child(2){animation-delay:-.16s}
+@keyframes tdot{0%,80%,100%{transform:scale(.7);opacity:.4}40%{transform:scale(1);opacity:1}}
+
 
     /* ═══════════ BACK TO TOP ═══════════ */
     #back-top{
@@ -865,6 +995,116 @@
       footer{flex-direction:column;text-align:center}
       .hero-name{font-size:clamp(32px,12vw,52px)}
     }
+    /* Experience Section Mobile Fix */
+@media (max-width: 768px){
+
+  #experience{
+    padding:80px 20px;
+  }
+
+  .timeline-line{
+    left:8px;
+  }
+
+  .exp-item{
+    padding-left:30px;
+    margin-bottom:36px;
+  }
+
+  .exp-node{
+    left:0;
+    width:14px;
+    height:14px;
+    top:16px;
+  }
+
+  .exp-card{
+    padding:22px 18px;
+    border-radius:14px;
+  }
+
+  .exp-card:hover{
+    transform:none;
+  }
+
+  .exp-head{
+    flex-direction:column;
+    gap:14px;
+    margin-bottom:16px;
+  }
+
+  .exp-icon{
+    width:48px;
+    height:48px;
+  }
+
+  .exp-icon svg{
+    width:22px;
+    height:22px;
+  }
+
+  .exp-title{
+    font-size:18px;
+    line-height:1.4;
+  }
+
+  .exp-company{
+    font-size:14px;
+  }
+
+  .exp-meta{
+    gap:10px;
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .exp-meta span{
+    font-size:11px;
+  }
+
+  .exp-desc{
+    font-size:13px;
+    line-height:1.8;
+  }
+
+  .exp-bullets li{
+    font-size:12px;
+    gap:10px;
+  }
+
+  .bullet-dot{
+    width:16px;
+    height:16px;
+  }
+
+  .bullet-dot svg{
+    width:8px;
+    height:8px;
+  }
+
+  .tags-wrap{
+    gap:6px;
+  }
+
+  .tag{
+    font-size:10px;
+    padding:5px 10px;
+  }
+}
+@media (max-width: 768px){
+
+  .timeline-line{
+    display:none;
+  }
+
+  .exp-item{
+    padding-left:0;
+  }
+
+  .exp-node{
+    display:none;
+  }
+}
   </style>
 </head>
 <body>
@@ -930,10 +1170,10 @@
     <span class="theme-swatch" style="background:linear-gradient(135deg,#00e5ff,#7c3aed)"></span>VOID
   </div>
   <div class="theme-opt" data-theme-val="cyber">
-    <span class="theme-swatch" style="background:linear-gradient(135deg,#00ff41,#00cc33)"></span>CYBER
+    <span class="theme-swatch" style="background:linear-gradient(135deg,#17f871,#14e141)"></span>CYBER
   </div>
-  <div class="theme-opt" data-theme-val="aurora">
-    <span class="theme-swatch" style="background:linear-gradient(135deg,#a855f7,#06b6d4)"></span>AURORA
+  <div class="theme-opt" data-theme-val="aurora-glass">
+    <span class="theme-swatch" style="background:linear-gradient(135deg,#a855f7,#06b6d4)"></span>AURORA-GLASS
   </div>
   <div class="theme-opt" data-theme-val="solar">
     <span class="theme-swatch" style="background:linear-gradient(135deg,#ff9900,#ff4400)"></span>SOLAR
@@ -946,6 +1186,9 @@
   </div>
   <div class="theme-opt" data-theme-val="obsidian">
     <span class="theme-swatch" style="background:linear-gradient(135deg,#ffffff,#555555)"></span>OBSIDIAN
+  </div>
+  <div class="theme-opt" data-theme-val="cosmic-ivory">
+    <span class="theme-swatch" style="background:linear-gradient(135deg,#d7b256,#f7a31e)"></span>COSMIC IVORY
   </div>
 </div>
 
@@ -983,7 +1226,9 @@
         <span id="typed-text"></span><span class="role-cursor">|</span>
       </div>
       <p class="hero-desc">
-        Innovative Full-Stack Developer with a strong focus on building scalable, user-centric digital solutions. Dedicated to transforming ideas into seamless, high-performing web experiences using modern technologies and clean code practices.
+        Engineering the Future with Code, Creativity, and Artificial Intelligence.
+
+I build scalable web applications, AI-powered solutions, and high-performance digital experiences that transform ideas into impactful products.
       </p>
       <div class="hero-cta">
         <a href="#contact" class="btn-primary magnetic">
@@ -1028,7 +1273,8 @@
     <div class="section-label">Who I Am</div>
     <h2 class="section-title">About <span class="grad-text">Me</span></h2>
 <p class="section-sub">
-Full-stack developer specializing in building intelligent, real-time web applications using modern technologies. Passionate about designing scalable systems, integrating AI-driven solutions, and creating seamless user experiences that solve real-world problems.
+  I'm Abhishek Yadav, a Full-Stack Developer passionate about creating intelligent digital products that blend technology, creativity, and innovation. From responsive user interfaces to robust backend architectures and AI integrations, I build solutions that are fast, scalable, and designed for the future. My goal is to deliver seamless experiences that help businesses and users achieve more through technology.
+
 </p>
     <div class="about-grid" data-reveal>
       <div class="about-card">
@@ -1870,27 +2116,24 @@ Full-stack developer specializing in building intelligent, real-time web applica
    
 </footer>
 <!-- ═══════════════════ CHAT WIDGET ═══════════════════ -->
-<div class="chat-widget">
-  <div class="chat-box" id="chat-box">
-    <div class="chat-box-head">
-      <h4><span class="chat-bot-dot"></span>Nova AI Assistant</h4>
-      <button class="icon-btn" onclick="toggleChat()" style="width:30px;height:30px">
-        <i data-lucide="x" style="width:14px;height:14px"></i>
+<div class="cw">
+  <div class="cw-box" id="cw-box">
+    <div class="cw-head">
+      <h4><span class="cbdot"></span>Nova AI Assistant</h4>
+      <!-- Close button: dedicated element, always clickable, z-index:10 within widget -->
+      <button class="cw-close-btn" id="cw-close-btn" onclick="closeChat()" aria-label="Close chat">
+        <i data-lucide="x" style="width:13px;height:13px"></i>
       </button>
     </div>
-    <div class="chat-msgs" id="chat-messages">
+    <div class="cw-msgs" id="cw-msgs">
       <div class="msg bot">Hello! I'm Nova, Abhishek's AI assistant. Ask me anything about his skills, projects, or experience!</div>
     </div>
-    <div class="chat-input-row">
-      <input class="chat-input" id="chat-input" type="text" placeholder="Ask me anything..." onkeypress="handleChatKey(event)">
-      <button class="chat-send" onclick="sendMessage()">
-        <i data-lucide="send" style="width:15px;height:15px"></i>
-      </button>
+    <div class="cw-inp-row">
+      <input class="cw-inp" id="cw-inp" type="text" placeholder="Ask me anything..." onkeypress="if(event.key==='Enter')sendMsg()">
+      <button class="cw-send" onclick="sendMsg()"><i data-lucide="send" style="width:13px;height:13px"></i></button>
     </div>
   </div>
-  <div class="chat-toggle" onclick="toggleChat()">
-    <i data-lucide="message-circle" style="width:26px;height:26px"></i>
-  </div>
+  <div class="cw-tog" onclick="toggleChat()"><i data-lucide="message-circle" style="width:24px;height:24px"></i></div>
 </div>
 
 <script>
@@ -2237,79 +2480,97 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 // ═══════════════════════════════════════
 // CHAT WIDGET — with HTML response support
 // ═══════════════════════════════════════
-let chatHistory = [], isTyping = false;
+let chatHist=[],isTyping=false,chatOpen=false;
 
-function toggleChat() {
-  const box = document.getElementById('chat-box');
-  box.classList.toggle('open');
-  if(box.classList.contains('open')) setTimeout(() => document.getElementById('chat-input').focus(), 300);
+function openChat(){
+  const b=document.getElementById('cw-box');
+  chatOpen=true;
+  b.classList.add('open');
+  setTimeout(()=>document.getElementById('cw-inp').focus(),280);
 }
 
-function handleChatKey(e) { if(e.key === 'Enter') sendMessage(); }
+function closeChat(){
+  const b=document.getElementById('cw-box');
+  chatOpen=false;
+  // Animate out then hide
+  b.style.transform='scale(0.92) translateY(12px)';
+  b.style.opacity='0';
+  b.style.transition='transform .22s cubic-bezier(.16,1,.3,1), opacity .18s ease';
+  setTimeout(()=>{
+    b.classList.remove('open');
+    b.style.transform='';
+    b.style.opacity='';
+    b.style.transition='';
+  },220);
+}
 
-async function sendMessage() {
-  const inp = document.getElementById('chat-input');
-  const msg = inp.value.trim();
-  if(!msg || isTyping) return;
-  addMsg(msg, 'user');
-  inp.value = '';
-  showTyping();
+function toggleChat(){
+  if(chatOpen)closeChat();
+  else openChat();
+}
 
-  try {
-    const res = await fetch(API_URL+'/api/chat', {
+/* Rich HTML renderer for bot messages */
+function sanitizeAndRender(html){
+  // If the response starts with a < it's already HTML from the backend
+  if(html.trim().startsWith('<'))return html;
+  // Otherwise escape and return as plain text
+  return html.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+async function sendMsg(){
+  const inp=document.getElementById('cw-inp');const msg=inp.value.trim();
+  if(!msg||isTyping)return;
+  addMsg(msg,'user');inp.value='';showTyping();
+  try{
+    const res=await fetch(API_URL+'/api/chat',{
       method:'POST',
       headers:{'Content-Type':'application/json'},
-      body: JSON.stringify({message:msg, history:chatHistory})
+      body:JSON.stringify({message:msg,history:chatHist})
     });
-    const d = await res.json();
+    const d=await res.json();
     removeTyping();
-    addBotMsg(d.response || 'Sorry, I could not understand that.');
-    chatHistory.push({role:'user',content:msg},{role:'assistant',content:d.response});
-    if(chatHistory.length > 12) chatHistory = chatHistory.slice(-12);
-  } catch(err) {
+    addBotMsg(d.response||'Sorry, I could not understand that.');
+    chatHist.push({role:'user',content:msg},{role:'assistant',content:d.response});
+    if(chatHist.length>12)chatHist=chatHist.slice(-12);
+  }catch{
     removeTyping();
-    addBotMsg('<div class="nova-response"><p>Sorry, the backend is offline. Please start the server at <strong>'+API_URL+'</strong> and try again.</p></div>');
+    addBotMsg('<p>Backend offline. Start the server at <code>'+API_URL+'</code></p>');
   }
 }
 
-function addMsg(text, type) {
-  const c = document.getElementById('chat-messages');
-  const d = document.createElement('div');
-  d.className = 'msg ' + type;
-  d.textContent = text;
+function addMsg(t,type){
+  const c=document.getElementById('cw-msgs');
+  const d=document.createElement('div');
+  d.className='msg '+type;
+  d.textContent=t;
   c.appendChild(d);
-  c.scrollTop = c.scrollHeight;
+  c.scrollTop=c.scrollHeight;
 }
 
-function addBotMsg(html) {
-  const c = document.getElementById('chat-messages');
-  const d = document.createElement('div');
-  d.className = 'msg bot';
-  // Render HTML if it looks like HTML, else plain text
-  if(html && html.trim().startsWith('<')) {
-    d.innerHTML = html;
-  } else {
-    d.textContent = html;
-  }
+function addBotMsg(html){
+  const c=document.getElementById('cw-msgs');
+  const d=document.createElement('div');
+  d.className='msg bot';
+  d.innerHTML=sanitizeAndRender(html);
   c.appendChild(d);
-  c.scrollTop = c.scrollHeight;
-  // Re-init lucide icons inside the new message
+  c.scrollTop=c.scrollHeight;
+  // Re-init any lucide icons inside the message
   lucide.createIcons({strokeWidth:1.5});
 }
 
-function showTyping() {
-  isTyping = true;
-  const c = document.getElementById('chat-messages');
-  const d = document.createElement('div');
-  d.className = 'typing-ind'; d.id = 'typing-ind';
-  d.innerHTML = '<div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div>';
-  c.appendChild(d); c.scrollTop = c.scrollHeight;
+function showTyping(){
+  isTyping=true;
+  const c=document.getElementById('cw-msgs');
+  const d=document.createElement('div');
+  d.className='typing';d.id='typing-ind';
+  d.innerHTML='<div class="tdot"></div><div class="tdot"></div><div class="tdot"></div>';
+  c.appendChild(d);c.scrollTop=c.scrollHeight;
 }
 
-function removeTyping() {
-  isTyping = false;
-  const el = document.getElementById('typing-ind');
-  if(el) el.remove();
+function removeTyping(){
+  isTyping=false;
+  const el=document.getElementById('typing-ind');
+  if(el)el.remove();
 }
 
 // ═══════════════════════════════════════
