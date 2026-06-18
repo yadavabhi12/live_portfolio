@@ -373,13 +373,21 @@
       transition:all .3s;font-family:'Sora',sans-serif;
     }
     .btn-ghost:hover{background:var(--surf2);border-color:var(--a1);color:var(--a1);box-shadow:0 0 24px var(--g1);transform:translateY(-2px)}
-    .hero-social{display:flex;gap:10px}
+    .socials{display:flex;gap:10px}
     .social-btn{
       width:25px;height:25px;border:1px solid var(--bdr);border-radius:12px;
       display:flex;align-items:center;justify-content:center;
       background:var(--surf);color:var(--txt2);transition:all .3s;
     }
     .social-btn:hover{border-color:var(--bdr2);color:var(--a1);background:var(--surf2);box-shadow:0 0 18px var(--g1);transform:translateY(-2px)}
+     .socials{display:flex;gap:9px}
+.soc-btn{
+  width:40px;height:40px;border:1px solid var(--bdr);border-radius:11px;
+  display:flex;align-items:center;justify-content:center;
+  background:var(--surf);color:var(--txt2);transition:all .3s cubic-bezier(.16,1,.3,1);
+}
+.soc-btn svg{width:16px;height:16px;fill:currentColor}
+.soc-btn:hover{border-color:var(--bdr2);color:var(--a1);background:var(--surf2);box-shadow:0 0 18px var(--g1);transform:translateY(-3px)}
 
     /* ═══ ORB ═══ */
     .hero-visual{display:flex;justify-content:center;align-items:center;position:relative}
@@ -982,24 +990,16 @@
           <i data-lucide="mail" style="width:16px;height:16px"></i>
           Get In Touch
         </a>
-        <a href="#" onclick="downloadCV();return false;" class="btn-ghost magnetic">
-          <i data-lucide="download" style="width:16px;height:16px"></i>
-          Download CV
+       <a href="https://drive.google.com/uc?export=download&id=18em6sVFOQDlq784xBUaq5IIVVXxqMzl9" class="btn-ghost magnetic" download>
+          <i data-lucide="download" style="width:16px;height:16px"></i> Download CV
         </a>
       </div>
-      <div class="hero-social">
-             <a href="https://github.com/yadavabhi12" target="_blank" class="social-btn">
-                <svg viewBox="0 0 24 24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.6.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
-             </a>
-             <a href="https://www.linkedin.com/in/abhishek-yadav-dev/" target="_blank" class="social-btn">
-                <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-             </a>
-             <a href="#" class="social-btn">
-                <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-             </a>
-             <a href="mailto:yadabhishek62@gmail.com" class="social-btn">
-              <i data-lucide="mail" style="width:18px;height:18px" class="lc-icon"></i>
-             </a>
+    
+       <div class="socials">
+        <a href="https://github.com/yadavabhi12" target="_blank" class="soc-btn"><svg viewBox="0 0 24 24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.6.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
+        <a href="https://www.linkedin.com/in/abhishek-yadav-dev/" target="_blank" class="soc-btn"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+        <a href="#" class="soc-btn"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="mailto:yadabhishek62@gmail.com" class="soc-btn"><i data-lucide="mail" style="width:16px;height:16px;stroke:currentColor;fill:none"></i></a>
       </div>
     </div>
 
@@ -1011,7 +1011,7 @@
         <div class="orb-ring orb-ring-3"></div>
         <div class="orb-ring orb-ring-4"></div>
         <div class="orb-photo">
-          <img src="./images/abhi.png" alt="Abhishek Yadav" onerror="this.src='https://ui-avatars.com/api/?name=Abhishek+Yadav&size=300&background=00e5ff&color=000&bold=true&format=svg'">
+          <img src="./images/abhi1.png" alt="Abhishek Yadav" onerror="this.src='https://ui-avatars.com/api/?name=Abhishek+Yadav&size=300&background=00e5ff&color=000&bold=true&format=svg'">
         </div>
         <div class="orb-chip chip-1">⚡ React.js Expert</div>
         <div class="orb-chip chip-2">🧠 200+ LeetCode</div>
@@ -1829,19 +1829,15 @@ Full-stack developer specializing in building intelligent, real-time web applica
           <div class="contact-item-text"><label>Location</label><span>Noida, India</span></div>
         </div>
         <div style="margin-top:28px;display:flex;gap:10px">
-          <a href="https://github.com/yadavabhi12" target="_blank" class="social-btn">
-      <svg viewBox="0 0 24 24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.6.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
-    </a>
-    <a href="https://www.linkedin.com/in/abhishek-yadav-dev/" target="_blank" class="social-btn">
-      <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-    </a>
-    <a href="#" class="social-btn">
-      <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-    </a>
-    <a href="mailto:yadabhishek62@gmail.com" class="social-btn">
-      <i data-lucide="mail" style="width:18px;height:18px" class="lc-icon"></i>
-    </a>
+             <a href="https://github.com/yadavabhi12" target="_blank" class="soc-btn"><svg viewBox="0 0 24 24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.6.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
+            <a href="https://www.linkedin.com/in/abhishek-yadav-dev/" target="_blank" class="soc-btn"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+            <a href="#" class="soc-btn"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+            <a href="mailto:yadabhishek62@gmail.com" class="soc-btn"><i data-lucide="mail" style="width:16px;height:16px;stroke:currentColor;fill:none"></i></a>
+         
         </div>
+
+
+        
       </div>
 
       <form class="contact-form" id="contact-form" onsubmit="handleContactSubmit(event)">
@@ -1865,19 +1861,13 @@ Full-stack developer specializing in building intelligent, real-time web applica
 <footer>
   <div class="footer-copy">© 2025 Abhishek Yadav — Built with ♥ and code</div>
   <div class="footer-links">
-    <a href="https://github.com/yadavabhi12" target="_blank" class="social-btn">
-      <svg viewBox="0 0 24 24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.6.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
-    </a>
-    <a href="https://www.linkedin.com/in/abhishek-yadav-dev/" target="_blank" class="social-btn">
-      <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-    </a>
-    <a href="#" class="social-btn">
-      <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-    </a>
-    <a href="mailto:yadabhishek62@gmail.com" class="social-btn">
-      <i data-lucide="mail" style="width:18px;height:18px" class="lc-icon"></i>
-    </a>
+     <a href="https://github.com/yadavabhi12" target="_blank" class="soc-btn"><svg viewBox="0 0 24 24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.6.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
+        <a href="https://www.linkedin.com/in/abhishek-yadav-dev/" target="_blank" class="soc-btn"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+        <a href="#" class="soc-btn"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="mailto:yadabhishek62@gmail.com" class="soc-btn"><i data-lucide="mail" style="width:16px;height:16px;stroke:currentColor;fill:none"></i></a>
+      
   </div>
+   
 </footer>
 <!-- ═══════════════════ CHAT WIDGET ═══════════════════ -->
 <div class="chat-widget">
